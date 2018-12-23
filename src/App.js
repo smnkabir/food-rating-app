@@ -1,25 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Form from './components/Form'
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      show: 0,
+      buttonLabel: 'Show Form',
+      itemList : []
+
+    }
+    this.handelClickAction = this.handelClickAction.bind(this);
+    this.addItem = this.addItem.bind(this);
+  }
+  addItem(item){
+    console.log(JSON.stringify(item));
+  }
+  handelClickAction(){
+    this.setState(()=>{
+      if(this.state.show === 0)
+        return {
+          show : 1,
+          buttonLabel : 'Hide',
+        }
+      else
+        return {
+          show : 0,
+          buttonLabel : 'Show Form',
+        }
+    });
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        {this.state.show ? <Form addItem = {this.addItem}/> : ''}
+        <button onClick = {this.handelClickAction}>{this.state.buttonLabel}</button>
       </div>
     );
   }
