@@ -6,6 +6,7 @@ class Item {
         this.restaurant = restaurant;
         this.location = location;
         this.price = price;
+        this.vote = 0;
     }
 }
 export default Item;

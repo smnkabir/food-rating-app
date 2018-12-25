@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Item from './Item'
+import '../css/materialize.css';
 class Form extends Component {
     constructor(){
         super();
@@ -22,18 +23,22 @@ class Form extends Component {
     }
     render() {
         return(
-            <div>
+            <div className="row">
+            <div className="col s12 m3"></div>
+            <div className="col s12 m6 row z-depth-2">
             <form onSubmit={this.onSubmit}>
                 <table>
-                    <tr><th>Item Name </th><th><input name = "name"type="text"/></th></tr>
-                    <tr><th>Item Type </th><th><input name = "type"type="text"/></th></tr>
-                    <tr><th>Restaurant Name </th><th><input name = "restaurant"type="text"/></th></tr>
-                    <tr><th>Location </th><th><input name = "location"type="text"/></th></tr>
-                    <tr><th>Price </th><th><input name = "price"type="text"/></th></tr>
-                    <tr><th></th><th><button>Add This Item</button></th></tr>
+                        <tr><th>Item Name </th><th><input name = "name"type="text"/></th></tr>
+                        <tr><th>Item Type </th><th><input name = "type"type="text"/></th></tr>
+                        <tr><th>Restaurant Name </th><th><input name = "restaurant"type="text"/></th></tr>
+                        <tr><th>Location </th><th><input name = "location"type="text"/></th></tr>
+                        <tr><th>Price </th><th><input name = "price"type="text"/></th></tr>
+                        <tr><th></th><th><button className="waves-effect waves-light btn-large">Add This Item</button></th></tr>
                 </table>
             
             </form>
+            </div>
+            
             </div>
         )
     }

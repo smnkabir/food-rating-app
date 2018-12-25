@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Form from './components/Form';
 import ItemView from './components/ItemView';
 import './App.css';
+import './css/materialize.css';
 
 class App extends Component {
   constructor(props){
@@ -22,6 +23,8 @@ class App extends Component {
     this.setState(()=>{
       return{
         itemList: this.state.itemList,
+        show: 0,
+        buttonLabel : 'Show Form',
       }
     })
   }
@@ -43,10 +46,31 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.show ? <Form addItem = {this.addItem}/> : ''}
-        <button onClick = {this.handelClickAction}>{this.state.buttonLabel}</button>
+        <button className = "btn waves-effect waves-light" onClick = {this.handelClickAction}>{this.state.buttonLabel}</button>
         <h1>List Of All The Good Mood Foods</h1>
         <hr/>
+        <div className="row">
         {this.state.itemList.map((item)=> <ItemView key = {item} item = {item}/>)}
+        </div>
+
+        <footer className="page-footer">
+        <div className="container">
+          <div className="row">
+            <div className="col l6 s12">
+              <h5 className="white-text">Nk Production</h5>
+              <p className="grey-text text-lighten-4">Department of CSE,Southeast University,Banai,Dhaka.</p>
+            </div>
+            <div className="col l4 offset-l2 s12">
+              <h5 className="white-text">Find Me</h5>
+            </div>
+          </div>
+        </div>
+        <div className="footer-copyright">
+          <div className="container">
+          © 2018 Nk
+          </div>
+        </div>
+      </footer>
       </div>
     );
   }
