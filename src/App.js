@@ -45,13 +45,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <header>
+        <h1>Food Rating</h1>
+      </header>
+      <main>
         {this.state.show ? <Form addItem = {this.addItem}/> : ''}
         <button className = "btn waves-effect waves-light" onClick = {this.handelClickAction}>{this.state.buttonLabel}</button>
-        <h1>List Of All The Good Mood Foods</h1>
+        <h3>List Of All The Good Mood Foods</h3>
         <hr/>
         <div className="row">
-        {this.state.itemList.map((item)=> <ItemView key = {item} item = {item}/>)}
+          {this.state.itemList.map((item)=> <ItemView key = {item} item = {item}/>)}
         </div>
+      </main>
 
         <footer className="page-footer">
         <div className="container">
@@ -67,7 +72,7 @@ class App extends Component {
         </div>
         <div className="footer-copyright">
           <div className="container">
-          © 2018 Nk
+          © Nk @2018
           </div>
         </div>
       </footer>

@@ -30,15 +30,15 @@ class ItemView extends Component{
     render(){
         return(
              <div>
-                <div class="col s12 m4 z-depth-2">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
-                    <span class="card-title">{this.props.item.name}</span>
+                <div className="col s12 m4">
+                <div className="card blue-grey darken-1">
+                    <div className="card-content white-text">
+                    <span className="card-title">{this.props.item.name}</span>
                     <p>({this.props.item.type})</p>
                     <p>At {this.props.item.restaurant},{this.props.item.location}</p>
                     <input className="valing center" value = {"+" + this.state.vote.toString() + " Votes"}  type="text"/>
                     </div>
-                    <div class="card-action">
+                    <div className="card-action">
                     <button className="waves-effect waves-light btn-large" onClick={this.upVote}>+</button>
                     <button className="waves-effect waves-light btn-large" onClick={this.downVote}>-</button>
                     </div>
